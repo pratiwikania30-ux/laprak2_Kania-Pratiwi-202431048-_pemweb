@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN PRAKTIKUM WEB</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="mode-rapi"> 
+    
+    <h1>LAPORAN PRAKTIKUM PEMROGRAMAN WEB</h1>
+    <h2>Nama / NIM: KANIA PRATIWI / 202431048</h2>
+
+    <hr>
+
+    <div class="section-container">
+        <h3 onclick="toggleContentWithConfirm(this, 'content1')">1. Struktur Dasar, CSS, dan JavaScript</h3>
+        
+        <div id="content1" class="hidden"> 
+            
+            <h4>Soal 1a: Mengapa penggunaan CSS dan JavaScript sangat penting dalam pemrograman web modern?</h4>
+            <p class="jawaban">
+                Jawaban: Penggunaan keduanya menciptakan separation of concerns. HTML hanya fokus pada struktur konten, CSS fokus pada presentasi/tampilan visual (layout, warna, font), dan JavaScript fokus pada perilaku/interaktivitas dinamis. Ini membuat kode lebih bersih, mudah dipelihara, dan efisien.
+            </p>
+            
+            <h4>Soal 1b: Sebutkan dan jelaskan dua komponen penting yang harus fleksibel dalam Responsive Web Design (RWD).</h4>
+            <p class="jawaban">
+                Jawaban: Dua komponen penting RWD adalah Fluid Grid (menggunakan unit relatif seperti persen (%) atau `vw` untuk lebar *layout*) dan **Flexible Images** (menggunakan `max-width: 100%` agar gambar tidak melebihi lebar kontainer).
+            </p>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="section-container">
+        <h3 onclick="toggleContentWithConfirm(this, 'content2')">2. Interaktivitas dan Mode Tampilan</h3>
+        
+        <div id="content2" class="hidden"> 
+            
+            <h4>Soal 2a: Dalam JavaScript, properti CSS apa yang dimanipulasi untuk menyembunyikan atau menampilkan elemen, seperti yang digunakan pada tugas ini?</h4>
+            <p class="jawaban">
+                Jawaban: Properti CSS yang dimanipulasi adalah `display`. Untuk menyembunyikan, nilainya diubah menjadi `display: none;` (melalui penambahan class `.hidden` menggunakan JS). Untuk menampilkan kembali, class tersebut dihapus atau properti `display` dikembalikan ke nilai aslinya (misalnya `block`, `flex`, atau `grid`).
+            </p>
+            
+            <button onclick="toggleDesignMode()">Ubah Mode Tampilan</button>
+            <p>Saat ini dalam mode: <span id="currentMode">Rapi</span></p>
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="section-container">
+        <h3 onclick="toggleContentWithConfirm(this, 'content3')">3. CSS dan Responsive Web Design (RWD)</h3>
+        
+        <div id="content3" class="hidden"> 
+            
+            <h4>Soal 3a: Apa fungsi utama dari Media Queries dalam implementasi RWD?</h4>
+            <p class="jawaban">
+                Jawaban: Media Queries berfungsi untuk menerapkan set aturan CSS tertentu hanya ketika kondisi tertentu terpenuhi, biasanya yang berkaitan dengan karakteristik perangkat seperti lebar layar (`max-width`, `min-width`) atau orientasi perangkat (`orientation: landscape`). Ini memungkinkan layout yang berbeda untuk desktop, tablet, dan smartphone.
+            </p>
+            
+            <h4>Soal 3b: Kapan sebaiknya Anda menggunakan Flexbox dan kapan sebaiknya menggunakan Grid dalam CSS Layout?</h4>
+            <p class="jawaban">
+                Jawaban: Gunakan Flexbox untuk tata letak satu dimensi (mengatur item dalam baris *atau* kolom, misalnya bilah navigasi). Gunakan CSS Grid untuk tata letak dua dimensi (mengatur item dalam baris dan kolom secara bersamaan, ideal untuk struktur utama halaman web atau galeri foto).
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

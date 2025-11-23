@@ -1,0 +1,100 @@
+/* --- 3. Desain Tampilan Menggunakan CSS --- */
+
+/* Gaya Dasar (Default - Mode Rapi) */
+body.mode-rapi {
+    font-family: 'Arial', sans-serif; /* Font mudah dibaca */
+    color: #333;
+    background-color: #f4f4f9; /* Warna seimbang */
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h3 {
+    cursor: pointer; /* Menandakan elemen dapat diklik */
+    color: #007bff;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none; /* Digunakan oleh JS untuk menyembunyikan konten */
+}
+
+/* Menggunakan Flexbox untuk tata letak 2 kolom di Desktop */
+.section-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; /* Jarak antar elemen */
+    padding: 10px 0;
+}
+
+.section-container h3 {
+    flex: 1 1 100%; /* Header mengambil lebar penuh */
+}
+
+/* Konten (Jawaban, dll.) di mode desktop akan berada di kolom kedua */
+.section-container > div {
+    flex: 2; /* Mengambil 2/3 dari ruang yang tersisa */
+    min-width: 300px;
+    padding-left: 10px;
+    border-left: 2px solid #ddd;
+    transition: all 0.5s ease; /* Transisi untuk perubahan visual halus */
+}
+
+
+/* --- 4. Responsivitas dengan RWD (Media Queries) --- */
+
+/* A. Desktop Layar Besar (>= 1024px) - 2 Kolom (Seperti di atas) */
+
+
+/* B. Layar Tablet (600px - 1023px) - Ubah menjadi 1 Kolom (Teks di tengah) */
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+    .section-container {
+        flex-direction: column; /* Ubah tata letak menjadi vertikal (1 kolom) */
+        align-items: center; /* Teks di tengah */
+    }
+    
+    .section-container > div {
+        flex: 1 1 100%; 
+        border-left: none; /* Hilangkan batas kolom */
+        padding-left: 0;
+        text-align: center; 
+    }
+}
+
+/* C. Layar Smartphone (<= 599px) - 1 Kolom (Font/Tombol lebih besar) */
+@media screen and (max-width: 599px) {
+    body {
+        padding: 10px;
+    }
+    .section-container {
+        flex-direction: column;
+    }
+    .section-container > div {
+        flex: 1 1 100%; 
+        border-left: none;
+        padding-left: 0;
+    }
+    p, h4 {
+        font-size: 1.1em; /* Ukuran font lebih besar */
+    }
+    button {
+        padding: 10px 15px; /* Tombol lebih besar agar mudah disentuh */
+        font-size: 1em;
+    }
+}
+
+
+/* --- Desain Mode Berantakan (Tambahan) --- */
+body.mode-berantakan {
+    font-family: 'Comic Sans MS', cursive; /* Font tidak serius */
+    color: maroon; /* Warna mencolok (Merah) */
+    background-color: pink; /* Background kuning mencolok */
+    line-height: 2.5; /* Jarak baris berlebihan */
+    padding: 5px 50px 100px 10px; /* Padding tidak proporsional */
+}
+
+body.mode-berantakan h3 {
+    color: purple; /* Warna mencolok lainnya */
+    margin: 50px 0 5px 0; /* Margin tidak teratur */
+    border: 5px dashed indigo;
+}
